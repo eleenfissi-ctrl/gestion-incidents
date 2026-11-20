@@ -1,0 +1,18 @@
+# Docker Compose pour le DÉPLOIEMENT : on utilise l'image publiée dans GHCR.
+# Pas de "build" ici : la machine de déploiement ne reconstruit rien.
+#
+# ⚠️ Remplacez NOM-UTILISATEUR par votre nom GitHub EN MINUSCULES.
+services:
+  web:
+    image: ghcr.io/nom-utilisateur/gestion-incidents:latest
+    container_name: gestion-incidents-prod
+    ports:
+      - "8080:5000"
+    environment:
+      - DATABASE=/data/incidents.db
+    volumes:
+      - incidents-prod-data:/data
+    restart: always
+
+volumes:
+  incidents-prod-data:
