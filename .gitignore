@@ -1,0 +1,17 @@
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
+venv/
+.venv/
+
+# Base de données locale (elle ne doit pas aller sur GitHub)
+*.db
+
+# Éditeurs / système
+.vscode/
+.idea/
+.DS_Store
+
+# Secrets
+.env
