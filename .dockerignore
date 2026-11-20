@@ -1,0 +1,10 @@
+# Fichiers à NE PAS copier dans l'image Docker
+.git
+.github
+__pycache__/
+*.pyc
+.pytest_cache/
+venv/
+.venv/
+*.db
+captures/
