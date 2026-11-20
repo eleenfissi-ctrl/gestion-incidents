@@ -1,0 +1,16 @@
+# Docker Compose pour le DÉVELOPPEMENT : on construit l'image à partir du Dockerfile.
+services:
+  web:
+    build: .                          # construire l'image avec le Dockerfile du dossier
+    image: gestion-incidents:local    # nom donné à l'image construite
+    container_name: gestion-incidents
+    ports:
+      - "5000:5000"                   # port machine : port conteneur
+    environment:
+      - DATABASE=/data/incidents.db
+    volumes:
+      - incidents-data:/data          # la base survit à l'arrêt du conteneur
+    restart: unless-stopped           # redémarre automatiquement en cas de plantage
+
+volumes:
+  incidents-data:
