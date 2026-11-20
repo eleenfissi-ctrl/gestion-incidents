@@ -1,0 +1,25 @@
+* { box-sizing: border-box; }
+body { margin: 0; font-family: system-ui, sans-serif; background: #f4f6f9; color: #222; }
+header { display: flex; justify-content: space-between; align-items: center;
+         padding: 1rem 2rem; background: #1f3a5f; }
+header .logo { color: #fff; font-weight: bold; text-decoration: none; font-size: 1.2rem; }
+main { max-width: 900px; margin: 2rem auto; padding: 0 1rem; }
+table { width: 100%; border-collapse: collapse; background: #fff; }
+th, td { padding: .7rem; border-bottom: 1px solid #e3e6ea; text-align: left; }
+th { background: #e9eef5; }
+.carte { background: #fff; padding: 1.5rem; border-radius: 8px; margin-bottom: 1rem; }
+label { display: block; margin-bottom: 1rem; font-weight: 600; }
+input, textarea, select { width: 100%; padding: .5rem; margin-top: .3rem;
+                          border: 1px solid #ccc; border-radius: 4px; font: inherit; }
+.actions { display: flex; gap: 1rem; align-items: center; margin-bottom: 1rem; }
+.actions select { width: auto; margin: 0 .5rem 0 0; }
+.btn { background: #2e7dd7; color: #fff; border: none; padding: .55rem 1rem;
+       border-radius: 4px; cursor: pointer; text-decoration: none; font: inherit; }
+.btn.danger { background: #d64545; }
+.badge { padding: .2rem .6rem; border-radius: 12px; font-size: .85rem; background: #ddd; }
+.prio-faible { background: #d4edda; }
+.prio-moyenne { background: #fff3cd; }
+.prio-élevée { background: #f8d7da; }
+.statut { background: #dbe7f7; }
+.erreur { background: #f8d7da; padding: .7rem; border-radius: 4px; }
+.vide { color: #666; }
