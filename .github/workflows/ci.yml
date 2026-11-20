@@ -1,0 +1,38 @@
+# Intégration continue (CI) : vérifie automatiquement le code à chaque push / PR sur main.
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  verification:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Récupérer le code source
+      - name: Récupérer le code
+        uses: actions/checkout@v4
+
+      # 2. Installer Python et les dépendances
+      - name: Installer Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Installer les dépendances
+        run: pip install -r requirements.txt
+
+      # 3. Exécuter les tests automatisés
+      - name: Lancer les tests
+        run: pytest -v
+
+      # 4. Vérifier que compose.yaml est valide
+      - name: Vérifier Docker Compose
+        run: docker compose config
+
+      # 5. Construire l'image Docker
+      - name: Construire l'image Docker
+        run: docker build -t gestion-incidents:ci .
