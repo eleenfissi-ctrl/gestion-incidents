@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block contenu %}
+<h1>Liste des incidents</h1>
+
+{% if incidents %}
+<table>
+  <thead>
+    <tr><th>N°</th><th>Titre</th><th>Lieu</th><th>Priorité</th><th>Statut</th><th></th></tr>
+  </thead>
+  <tbody>
+    {% for i in incidents %}
+    <tr>
+      <td>{{ i.id }}</td>
+      <td>{{ i.titre }}</td>
+      <td>{{ i.lieu }}</td>
+      <td><span class="badge prio-{{ i.priorite|lower }}">{{ i.priorite }}</span></td>
+      <td><span class="badge statut">{{ i.statut }}</span></td>
+      <td><a href="{{ url_for('incidents.details', incident_id=i.id) }}">Détails</a></td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% else %}
+<p class="vide">Aucun incident signalé pour le moment.</p>
+{% endif %}
+{% endblock %}

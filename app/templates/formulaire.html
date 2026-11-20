@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block contenu %}
+<h1>Signaler un incident</h1>
+
+{% if erreur %}<p class="erreur">{{ erreur }}</p>{% endif %}
+
+<form method="post" class="carte">
+  <label>Titre
+    <input name="titre" value="{{ form.get('titre', '') }}" required>
+  </label>
+  <label>Description
+    <textarea name="description" rows="4" required>{{ form.get('description', '') }}</textarea>
+  </label>
+  <label>Lieu (salle ou laboratoire)
+    <input name="lieu" value="{{ form.get('lieu', '') }}" required>
+  </label>
+  <label>Priorité
+    <select name="priorite">
+      {% for p in priorites %}<option>{{ p }}</option>{% endfor %}
+    </select>
+  </label>
+  <button type="submit" class="btn">Enregistrer</button>
+</form>
+{% endblock %}
