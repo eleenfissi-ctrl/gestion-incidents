@@ -51,7 +51,7 @@ def ajouter():
         db = get_db()
         db.execute(
             "INSERT INTO incidents (titre, description, lieu, priorite, statut) "
-            "VALUES (?, ?, ?, ?, 'Ouvert')",
+            "VALUES (?, ?, ?, ?, 'Nouveau')",
             (titre, description, lieu, priorite),
         )
         db.commit()
