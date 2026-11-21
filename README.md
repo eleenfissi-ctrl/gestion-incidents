@@ -147,7 +147,7 @@ git checkout main
 git merge feature/gestion-incidents
 
 # 8. Envoyer sur GitHub (créer d'abord un dépôt vide "gestion-incidents" sur github.com)
-git remote add origin https://github.com/NOM-UTILISATEUR/gestion-incidents.git
+git remote add origin https://github.com/eleenfissi-ctrl/gestion-incidents.git
 git push -u origin main
 git push origin feature/gestion-incidents
 ```
