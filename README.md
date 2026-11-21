@@ -300,7 +300,7 @@ Ouvrir **http://localhost:8080** et tester ajout / liste / détails / statut / s
 
 ## 👥 Auteurs
 
-- Étudiant 1 — *Nom Prénom*
-- Étudiant 2 — *Nom Prénom*
+- Étudiant 1 — *nfissi alaa*
+- Étudiant 2 — *daghfous ines*
 
 DSI3 — Module DevOps 2026-2027
